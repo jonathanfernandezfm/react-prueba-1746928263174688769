@@ -1,0 +1,9 @@
+a.active:before {
+	content: '';
+	position: absolute;
+	background-color: #697eed;
+	width: 7px;
+	height: 24px;
+	left: -3px;
+	border-radius: 20px;
+}
