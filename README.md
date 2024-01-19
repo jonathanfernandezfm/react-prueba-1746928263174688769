@@ -1,30 +1,26 @@
-# React + TypeScript + Vite
+# Prueba React 1746928263174688769
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="https://i.ibb.co/y6HfPfF/Screenshot-2024-01-19-170640.png">
 
-Currently, two official plugins are available:
+## Explicación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Prueba técnica en la que se debía replicar el diseño de la pantalla que se ofrecía.
 
-## Expanding the ESLint configuration
+-   Se ha desarrollado una aplicación en React para completar la tarea.
+-   Se ha usado Vite como build tool para hacer el desarrollo mas rápido.
+-   Se ha usado TailwindCSS para agilizar la implementación de los estilos. Aún asi, ciertos aspectos se han hecho en CSS.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Todos los recursos como iconos e imagenes han sido extraidos del diseño (Figma) aunque algunos estaban mal configurados o simplemente eran estaticos y requerían cambios de color.
 
-- Configure the top-level `parserOptions` property like this:
+Algunos componentes, como el formulario o la gráfica, usan librerías externas para agilizar y facilitar la implementatión.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-   Gráficas: Recharts
+-   Formulario pedido: TailwindCSS UI
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Para el uso de APIs no he encontrado ninguna API que ofrezca los datos que aparecen en la página asi que he implementado una similución de fetch de los clientes, donde hay estados de loading. A pesar de no usar API, el código está enfocado y fraccionado de manera que aceptaría fetching de datos dinámico.
+
+La interfaz ha sido replicada a la perfección, aunque hay ciertos detalles como posicionamiento, margenes, etc que me he tomado la libertad de ajustar para que el producto final fuera mas consistente.
+
+# Resultado
+
+<img src="https://i.ibb.co/xqMQYf3/Screenshot-2024-01-19-172026.png">
