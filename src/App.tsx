@@ -5,13 +5,14 @@ import '@fontsource/poppins/600.css';
 import '@fontsource/poppins/700.css';
 import NavPanel from './components/NavPanel';
 import Main from './components/Main';
+import Layout from './Layout';
 
 function App() {
   return (
-    <div className='flex'>
+    <Layout>
       <NavPanel />
       <Main />
-    </div>
+    </Layout>
   );
 }
 

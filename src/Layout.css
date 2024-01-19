@@ -1,0 +1,6 @@
+#layout {
+	display: grid;
+	grid-template-columns: 250px auto;
+	grid-template-areas: 'nav-panel main-content';
+	height: 100%;
+}

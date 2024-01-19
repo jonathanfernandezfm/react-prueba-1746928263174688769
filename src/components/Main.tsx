@@ -5,17 +5,19 @@ import CustomInputNumber from './CustomInputNumber';
 import CustomInputUnit from './CustomInputUnit';
 import DataItem from './DataItem';
 import Dropdown from './Dropdown';
+import BarChart from './BarChart';
 import HomeIcon from './icons/HomeIcon';
 import MenuIcon from './icons/MenuIcon';
+import './Main.css'
 
 function Main() {
   const [quantity, setQuantity] = useState(0)
   const [money, setMoney] = useState(0)
 
   return (
-    <div className='px-6 py-8'>
+    <div id="main-section" className='px-6 py-8'>
       <h1 className='flex items-center gap-5 text-center'>
-        <HomeIcon active={true} />
+        <HomeIcon activeColor={true} />
         <span className='text-2xl font-bold'>Inicio</span>
       </h1>
       <div className='flex flex-wrap gap-5 mt-4'>
@@ -42,9 +44,9 @@ function Main() {
           </div>
           <div className='mt-6 space-y-[20px]'>
             <ClientRow name='Daniela Ayala' date='20/01/2023' amount={100} />
-            <ClientRow name='Daniela Ayala' date='20/01/2023' amount={100} />
-            <ClientRow name='Daniela Ayala' date='20/01/2023' amount={100} />
-            <ClientRow name='Daniela Ayala' date='20/01/2023' amount={100} />
+            <ClientRow name='Rubén González' date='20/01/2023' amount={100} />
+            <ClientRow name='Mariana Reyes' date='20/01/2023' amount={100} />
+            <ClientRow name='Julio Espinoza' date='20/01/2023' amount={100} />
           </div>
 
         </Card>
@@ -61,6 +63,13 @@ function Main() {
               <CustomInputUnit unit='Bs' value={money} onChange={(value) => { setMoney(value) }} />
             </div>
             <button className='bg-[#367DFD] self-end py-2 px-5 rounded-full font-semibold text-white mt-2 shadow'>Realizar pedido</button>
+          </div>
+        </Card>
+      </div>
+      <div className='mt-8'>
+        <Card>
+          <div className='flex w-[800px] h-[350px]'>
+            <BarChart />
           </div>
         </Card>
       </div>

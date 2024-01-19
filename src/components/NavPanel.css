@@ -1,3 +1,9 @@
+#nav-panel {
+	grid-area: nav-panel;
+	overflow: hidden;
+	position: fixed;
+}
+
 a.active:before {
 	content: '';
 	position: absolute;
