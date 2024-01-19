@@ -9,6 +9,7 @@ import BarChart from './BarChart';
 import HomeIcon from './icons/HomeIcon';
 import MenuIcon from './icons/MenuIcon';
 import './Main.css'
+import FloatingAlert from './FloatingAlert';
 
 function Main() {
   const [quantity, setQuantity] = useState(0)
@@ -17,7 +18,7 @@ function Main() {
   return (
     <div id="main-section" className='px-6 py-8'>
       <h1 className='flex items-center gap-5 text-center'>
-        <HomeIcon activeColor={true} />
+        <HomeIcon color='black' />
         <span className='text-2xl font-bold'>Inicio</span>
       </h1>
       <div className='flex flex-wrap gap-5 mt-4'>
@@ -40,7 +41,9 @@ function Main() {
         <Card>
           <div className='flex items-center'>
             <p className='text-base font-semibold'>Clientes <span className='text-xs font-normal'>Vista rápida</span></p>
-            <img src='./menu.svg' className="ml-auto"></img>
+            <button className="ml-auto">
+              <MenuIcon />
+            </button>
           </div>
           <div className='mt-6 space-y-[20px]'>
             <ClientRow name='Daniela Ayala' date='20/01/2023' amount={100} />
@@ -53,16 +56,18 @@ function Main() {
         <Card>
           <div className='flex items-center'>
             <p className='text-base font-semibold'>Realizar pedido</p>
-            <MenuIcon className='ml-auto' />
+            <button className="ml-auto">
+              <MenuIcon />
+            </button>
           </div>
           <div className='flex flex-col gap-2 mt-6 w-[400px]'>
-            <Dropdown placeholder='Cliente' values={['Pepe Viyuela']} width='400px' />
+            <Dropdown placeholder='Cliente' values={['Daniela Ayala', 'Rubén González', 'Mariana Reyes', 'Julio Espinoza']} width='400px' />
             <Dropdown placeholder='Item' values={['Botellon de 20 Lts', 'Garrafa']} width='400px' />
             <div className='flex gap-4'>
               <CustomInputNumber label='Cantidad' value={quantity} onChange={(value) => { setQuantity(value) }} />
               <CustomInputUnit unit='Bs' value={money} onChange={(value) => { setMoney(value) }} />
             </div>
-            <button className='bg-[#367DFD] self-end py-2 px-5 rounded-full font-semibold text-white mt-2 shadow'>Realizar pedido</button>
+            <button className='bg-[#367DFD] self-end py-2 px-5 rounded-full font-semibold text-white mt-2 shadow hover:bg-[#3466c2]'>Realizar pedido</button>
           </div>
         </Card>
       </div>
@@ -73,6 +78,7 @@ function Main() {
           </div>
         </Card>
       </div>
+      <FloatingAlert alert={true} />
     </div>
   )
 }
