@@ -10,11 +10,11 @@ function CustomInputNumber({ label, value, onChange }: CustomInputProps) {
       <span>{label}</span>
       <div className="flex gap-2">
 
-        <button onClick={() => { onChange(value - 1 > 0 ? value - 1 : 0) }}>
+        <button type="button" onClick={() => { onChange(value - 1 > 0 ? value - 1 : 0) }}>
           <img src='./minus.svg'></img>
         </button>
         <input type="number" className="w-10 text-center rounded-md ring-1 ring-inset ring-gray-300" value={value} onChange={(e) => onChange(parseInt(e.target.value))} />
-        <button onClick={() => { onChange(value + 1) }}>
+        <button type="button" onClick={() => { onChange(value + 1) }}>
           <img src='./plus.svg'></img>
         </button>
       </div>

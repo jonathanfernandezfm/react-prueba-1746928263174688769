@@ -5,19 +5,34 @@ import Dropdown from '../components/Dropdown'
 import CustomInputNumber from '../components/CustomInputNumber'
 import CustomInputUnit from '../components/CustomInputUnit';
 import { items } from '../utils/data'
-import { useEffect, useState } from 'react'
+import { FormEvent, useEffect, useState } from 'react'
 import { useClients } from '../hooks/useClients'
+import Client from '../models/Client'
 
-function QuickActions() {
+interface QuickActionsProps {
+  createOrder: (order: { client: string, item: string, quantity: number, price: number }) => void
+}
+
+function QuickActions({ createOrder }: QuickActionsProps) {
   const { clients, loading, getClients } = useClients();
-  const [quantity, setQuantity] = useState(0)
-  const [money, setMoney] = useState(0)
+  const [client, setClient] = useState<Client | undefined>(undefined);
+  const [item, setItem] = useState("");
+  const [quantity, setQuantity] = useState(0);
+  const [price, setPrice] = useState(0);
 
   useEffect(() => {
     if (!clients.length) getClients()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  console.log(clients, loading)
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    console.log('submit', e, client, item, quantity, price, buttonDisabled)
+    await createOrder({ client: client?.name ?? '', item, quantity, price });
+  }
+
+  const buttonDisabled = (!client || !item || !quantity || !price);
+
   return (
     <>
       <h2 className='mt-8 text-lg font-semibold'>Acciones rápidas</h2>
@@ -50,15 +65,17 @@ function QuickActions() {
               <MenuIcon />
             </button>
           </div>
-          <div className='flex flex-col gap-2 mt-6 w-[400px]'>
-            <Dropdown placeholder='Cliente' values={clients.map(c => c.name)} width='400px' />
-            <Dropdown placeholder='Item' values={items} width='400px' />
-            <div className='flex gap-4'>
-              <CustomInputNumber label='Cantidad' value={quantity} onChange={(value) => { setQuantity(value) }} />
-              <CustomInputUnit unit='Bs' value={money} onChange={(value) => { setMoney(value) }} />
+          <form onSubmit={handleSubmit}>
+            <div className='flex flex-col gap-2 mt-6 w-[400px]'>
+              <Dropdown onChange={(value) => { setClient(clients[value]) }} placeholder='Cliente' values={clients.map(c => c.name)} width='400px' />
+              <Dropdown onChange={(value) => { setItem(items[value]) }} placeholder='Item' values={items} width='400px' />
+              <div className='flex gap-4'>
+                <CustomInputNumber label='Cantidad' value={quantity} onChange={(value) => { setQuantity(value) }} />
+                <CustomInputUnit unit='Bs' value={price} onChange={(value) => { setPrice(value) }} />
+              </div>
+              <button type='submit' disabled={buttonDisabled} className={`${buttonDisabled ? 'bg-[#717171]' : 'bg-[#367DFD] hover:bg-[#3466c2]'} self-end py-2 px-5 rounded-full font-semibold text-white mt-2 shadow`}>Realizar pedido</button>
             </div>
-            <button className='bg-[#367DFD] self-end py-2 px-5 rounded-full font-semibold text-white mt-2 shadow hover:bg-[#3466c2]'>Realizar pedido</button>
-          </div>
+          </form>
         </Card>
       </div>
     </>

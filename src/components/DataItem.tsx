@@ -1,7 +1,7 @@
 
 interface DataItemProps {
   title: string
-  value: string
+  value: string | number
   unit?: string
   percentage: number
   positive: boolean

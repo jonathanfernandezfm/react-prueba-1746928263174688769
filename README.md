@@ -17,7 +17,9 @@ Algunos componentes, como el formulario o la gráfica, usan librerías externas 
 -   Gráficas: Recharts
 -   Formulario pedido: TailwindCSS UI
 
-Para el uso de APIs no he encontrado ninguna API que ofrezca los datos que aparecen en la página asi que he implementado una similución de fetch de los clientes, donde hay estados de loading. A pesar de no usar API, el código está enfocado y fraccionado de manera que aceptaría fetching de datos dinámico.
+Para el uso de APIs he usado https://mockapi.io/ para crear una api pequeña y custom en la que añadir pedidos. El código está enfocado y fraccionado de manera que aceptaría fetching de datos dinámico.
+
+El manejo del estado de la app lo he derivado al componente principal, para poder pasar por props a los componentes hijos las funciones y estado del hook de pedidos. En una app mas compleja, otro gestor de estado, como Redux o Context tendría mas sentido
 
 La interfaz ha sido replicada a la perfección, aunque hay ciertos detalles como posicionamiento, margenes, etc que me he tomado la libertad de ajustar para que el producto final fuera mas consistente.
 
