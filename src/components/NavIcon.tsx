@@ -7,14 +7,12 @@ import Document from './icons/Document';
 import Graph from './icons/Graph';
 import Pie from './icons/Pie';
 import Settings from './icons/Settings';
+import { activeColor, inactiveColor } from '../utils/constants';
 
 interface NavIconProps {
   icon: string;
   active: boolean;
 }
-
-const activeColor = '#000000';
-const inactiveColor = '#ffffff';
 
 function NavIcon({ icon, active }: NavIconProps) {
 

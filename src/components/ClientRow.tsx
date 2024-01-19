@@ -5,7 +5,6 @@ interface ClientProps {
 }
 
 function ClientRow({ name, date, amount }: ClientProps) {
-  console.log(name.toLowerCase().replace(' ', ''))
   return (
     <div className='flex items-center gap-4'>
       <img src={`./${name.toLocaleLowerCase().replace(' ', '')}.png`} className=""></img>

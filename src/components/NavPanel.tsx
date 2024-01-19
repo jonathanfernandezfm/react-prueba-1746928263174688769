@@ -1,69 +1,9 @@
 import { useState } from 'react';
 import './NavPanel.css'
 import NavIcon from './NavIcon';
+import { navigationPanelButtons } from '../utils/data';
 
-const NavigationPanelButtons = [
-  {
-    id: 'home',
-    name: 'Inicio',
-    icon: './graph.svg',
-    selected: true,
-  },
-  {
-    id: 'clientes',
-    name: 'Clientes',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'mapa_clientes',
-    name: 'Mapa de clientes',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'distribuidores',
-    name: 'Monitoreo de Distribuidores',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'ventas',
-    name: 'Ventas',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'pedidos',
-    name: 'Pedidos',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'prestamos',
-    name: 'Préstamos',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'finanzas',
-    name: 'Finanzas',
-    icon: './graph.svg',
-    selected: false,
-  },
-  {
-    id: 'reportes',
-    name: 'Reportes',
-    icon: './house.svg',
-    selected: false,
-  },
-  {
-    id: 'configuracion',
-    name: 'Configuración',
-    icon: './house.svg',
-    selected: false,
-  },
-]
+
 
 function NavPanel() {
   const [active, setActive] = useState(0)
@@ -73,7 +13,7 @@ function NavPanel() {
       <img src='./smartwater.svg' className="mx-auto py-7"></img>
       <nav>
         <ul className="flex flex-col gap-[8px]">
-          {NavigationPanelButtons.map((button, index) => {
+          {navigationPanelButtons.map((button, index) => {
             return (
               <li key={button.id}>
                 <a href="#" onClick={() => { setActive(index) }} className={`flex items-center gap-4 mx-5 px-4 py-[9px] rounded-md relative ${active === index ? 'bg-white text-black font-bold active' : ''}`}>

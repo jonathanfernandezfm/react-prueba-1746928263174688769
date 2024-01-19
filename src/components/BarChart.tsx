@@ -1,32 +1,5 @@
 import { BarChart, Bar, Rectangle, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-const data = [
-  {
-    name: '1',
-    uv: 1900,
-    pv: 800,
-  },
-  {
-    name: '2',
-    uv: 1600,
-    pv: 800,
-  },
-  {
-    name: '3',
-    uv: 300,
-    pv: 400,
-  },
-  {
-    name: '4',
-    uv: 800,
-    pv: 1600,
-  },
-  {
-    name: '5',
-    uv: 1400,
-    pv: 2000,
-  },
-];
+import { barChartData } from '../utils/data';
 
 function BarChartCustom() {
   return (
@@ -34,7 +7,7 @@ function BarChartCustom() {
       <BarChart
         width={500}
         height={300}
-        data={data}
+        data={barChartData}
         margin={{
           top: 5,
           right: 30,
