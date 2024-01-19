@@ -36,6 +36,7 @@ export const navigationPanelButtons = [
     name: 'Pedidos',
     icon: './graph.svg',
     selected: false,
+    notification: 1,
   },
   {
     id: 'prestamos',
@@ -48,18 +49,21 @@ export const navigationPanelButtons = [
     name: 'Finanzas',
     icon: './graph.svg',
     selected: false,
+    children: []
   },
   {
     id: 'reportes',
     name: 'Reportes',
     icon: './house.svg',
     selected: false,
+    children: []
   },
   {
     id: 'configuracion',
     name: 'Configuración',
     icon: './house.svg',
     selected: false,
+    children: []
   },
 ]
 

@@ -3,8 +3,6 @@ import './NavPanel.css'
 import NavIcon from './NavIcon';
 import { navigationPanelButtons } from '../utils/data';
 
-
-
 function NavPanel() {
   const [active, setActive] = useState(0)
 
@@ -20,6 +18,10 @@ function NavPanel() {
                   {/* <img className="w-5 h-5" src={button.icon}></img> */}
                   <NavIcon active={active === index} icon={button.id} />
                   <span>{button.name}</span>
+                  {button.notification && <span className='px-4 py-2 bg-[#367DFD] rounded-xl ml-auto text-white'>1</span>}
+                  {button.children && <button className='ml-auto'>
+                    <img src='./chevron.svg' className='w-3 h-3'></img>
+                  </button>}
                 </a>
               </li>
             );
