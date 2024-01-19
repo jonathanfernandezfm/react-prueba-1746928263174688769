@@ -23,6 +23,8 @@ El manejo del estado de la app lo he derivado al componente principal, para pode
 
 La interfaz ha sido replicada a la perfección, aunque hay ciertos detalles como posicionamiento, margenes, etc que me he tomado la libertad de ajustar para que el producto final fuera mas consistente.
 
+Ciertos detalles, como pantallas de carga, animaciones y otros efectos que mejora la UX, pueden ser implementados en un projecto mas grande y con sus diseños correspondientes, pero como en este caso es solo una prueba, no lo he considerado de manera global.
+
 # Resultado
 
 <img src="https://i.ibb.co/xqMQYf3/Screenshot-2024-01-19-172026.png">
