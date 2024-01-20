@@ -23,7 +23,7 @@ function NavIcon({ icon, active }: NavIconProps) {
       return <Clients color={active ? activeColor : inactiveColor} />
     case 'mapa_clientes':
       return <MapClients color={active ? activeColor : inactiveColor} />
-    case 'distribuidores': // Truco por que no tengo SVG de este icono
+    case 'distribuidores':
       return active ? <img src="./distribuidores-dark.png" alt="" /> : <img src="./distribuidores.png" alt="" />
     case 'ventas':
       return <Sales color={active ? activeColor : inactiveColor} />
@@ -43,64 +43,3 @@ function NavIcon({ icon, active }: NavIconProps) {
 }
 
 export default NavIcon
-
-// {
-//   id: 'home',
-//   name: 'Inicio',
-//   icon: './graph.svg',
-//   selected: true,
-// },
-// {
-//   id: 'clientes',
-//   name: 'Clientes',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'mapa_clientes',
-//   name: 'Mapa de clientes',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'distribuidores',
-//   name: 'Monitoreo de Distribuidores',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'ventas',
-//   name: 'Ventas',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'pedidos',
-//   name: 'Pedidos',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'prestamos',
-//   name: 'Préstamos',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'finanzas',
-//   name: 'Finanzas',
-//   icon: './graph.svg',
-//   selected: false,
-// },
-// {
-//   id: 'reportes',
-//   name: 'Reportes',
-//   icon: './house.svg',
-//   selected: false,
-// },
-// {
-//   id: 'configuracion',
-//   name: 'Configuración',
-//   icon: './house.svg',
-//   selected: false,
-// },
